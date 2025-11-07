@@ -1,0 +1,30 @@
+rules:
+  - id: AUTH001
+    description: Multiple failed logins
+    event: login
+    level: WARNING
+    threshold: 5
+
+  - id: AUTH002
+    description: Impossible travel
+    event: login
+    level: CRITICAL
+    threshold: 1
+
+  - id: FILE001
+    description: Suspicious executable created
+    event: file_change
+    level: HIGH
+    threshold: 1
+
+  - id: NETWORK001
+    description: Port scanning detected
+    event: network_connect
+    level: HIGH
+    threshold: 10
+
+  - id: MALWARE001
+    description: Known malicious hash detected
+    event: process_start
+    level: CRITICAL
+    threshold: 1
